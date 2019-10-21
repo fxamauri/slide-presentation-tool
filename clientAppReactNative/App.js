@@ -48,7 +48,7 @@ function App() {
 
   async function connect() {
     try {
-      await request(ip + '/testconnection', 'POST');
+      await request(ip + '/testconnection', 'POST', code);
       setConnected(true);
       storeData(ip, code);
       const {ipStored} = await getStoredData();
@@ -69,7 +69,7 @@ function App() {
 
   async function handlePrevious() {
     try {
-      await request(ip + '/previous', 'POST');
+      await request(ip + '/previous', 'POST', code);
     } catch (err) {
       clearConnect();
       Alert.alert('Problemas ao conectar com o servidor');
@@ -78,7 +78,7 @@ function App() {
 
   async function handleNext() {
     try {
-      await request(ip + '/next', 'POST');
+      await request(ip + '/next', 'POST', code);
     } catch (err) {
       clearConnect();
       Alert.alert('Problemas ao conectar com o servidor');
@@ -182,6 +182,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     paddingLeft: 15,
+    height: 45,
+    marginBottom: 10,
   },
 });
 

@@ -6,7 +6,7 @@ const app = express();
 
 const generatedSecretKey = Math.random().toString(8).substr(15);
 // global auth middlware
-// app.use(authorizationMiddleware(generatedSecretKey));
+app.use(authorizationMiddleware(generatedSecretKey));
 
 app.use(routes);
 
