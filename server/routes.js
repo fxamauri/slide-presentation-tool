@@ -3,12 +3,12 @@ const { Router } = require('express');
 const router = Router();
 
 router.post('/next', (req, res) => {
-  robot.keyTap("up");
+  robot.keyTap("right");
   res.sendStatus(200);
 });
 
 router.post('/previous', (req, res) => {
-  robot.keyTap("down");
+  robot.keyTap("left");
   res.sendStatus(200);
 });
 
